@@ -3,9 +3,12 @@ name: CI/CD Deployment Pipeline
 on:
   push:
     branches: [main, dev]
+    paths:
+      - 'Assignments/Multi-Branch Environment Deployment/**'
   pull_request:
     branches: [main, dev]
-
+    paths:
+      - 'Assignments/Multi-Branch Environment Deployment/**'
 concurrency:
   group: deploy-${{ github.ref }}
   cancel-in-progress: true
